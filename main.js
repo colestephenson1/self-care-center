@@ -3,7 +3,6 @@
 
 var receiveMessageButton = document.querySelector('.button');
 var affirmationRadio = document.querySelector('#affirmation');
-var mantraRadio = document.querySelector('#mantra');
 var bigBox = document.querySelector('.big-box');
 
 
@@ -50,6 +49,7 @@ function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
 
+//Now our function to show a random affirmation or mantra when we hit the receive message button
 function showSelfCarePhrase() {
   bigBox.innerHTML ="";
   if(affirmationRadio.checked) {
