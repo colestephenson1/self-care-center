@@ -31,9 +31,10 @@ body {
   justify-content: center;
   align-items: center;
   width: 700px;
-  height: 140px;
+  height: 160px;
   background-color: white;
   border-radius: 10px;
+  margin-bottom: 100px;
 
 }
 .big-box {
@@ -44,9 +45,10 @@ body {
   height: 180px;
   background-color: white;
   border-radius: 10px;
+  margin-bottom: 365px;
 }
 .radio-buttons {
-  width: 35%;
+  width: 55%;
   display: flex;
   justify-content: space-between;
 }

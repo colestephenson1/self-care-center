@@ -1,7 +1,8 @@
 
 // Now let's establish variables for querySelectors
 
-var receiveMessageButton = document.querySelector('.button');
+var receiveMessageButton = document.querySelector('#receiveButton');
+var clearButton = document.querySelector('#clearButton')
 var affirmationRadio = document.querySelector('#affirmation');
 var bigBox = document.querySelector('.big-box');
 
@@ -23,7 +24,7 @@ var affirmations = ['I forgive myself and set myself free.',
 'I manifest perfect health by making smart choices.',];
 
 var mantras = ['Breathing in, I send myself love. Breathing out, I send love to someone else who needs it.',
-'Don’t let yesterday take up too much of today.',
+'Dont let yesterday take up too much of today.',
 'Every day is a second chance.',
 'Tell the truth and love everyone.',
 'I am free from sadness.',
@@ -38,9 +39,12 @@ var mantras = ['Breathing in, I send myself love. Breathing out, I send love to 
 'Onward and upward.',
 'I am the sky, the rest is weather.',];
 
+var combinedArrays = affirmations.concat(mantras);
+
 // Let's apply an event listener to the button
 
 receiveMessageButton.addEventListener('click', showSelfCarePhrase);
+clearButton.addEventListener('click', clearPhrase);
 
 //Okay, now let's get into the JS
 
@@ -56,5 +60,17 @@ function showSelfCarePhrase() {
     bigBox.innerHTML = `<p>${affirmations[getRandomIndex(affirmations)]}</p>`;
 } else {
     bigBox.innerHTML = `<p>${mantras[getRandomIndex(mantras)]}</p>`;
+  };
+};
+
+//Now our function for clearing the phrase or showing an error message
+function clearPhrase() {
+for (i = 0; i < combinedArrays.length; i++) {
+if(bigBox.innerText === combinedArrays[i]) {
+  bigBox.innerHTML = `<img src='./assets/meditate.svg' alt = 'meditation icon'>`;
+} else {
+  bigBox.innerText = 'Please select Affirmation or Mantra and try again :)';
+  clearButton.disable = true;
+    };
   };
 };
