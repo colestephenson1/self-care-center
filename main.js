@@ -2,11 +2,9 @@
 // Now let's establish variables for querySelectors
 
 var receiveMessageButton = document.querySelector('#receiveButton');
-var clearButton = document.querySelector('#clearButton')
+var clearButton = document.querySelector('.clear-button')
 var affirmationRadio = document.querySelector('#affirmation');
 var bigBox = document.querySelector('.big-box');
-
-
 
 // Let's establish our arrays:
 var affirmations = ['I forgive myself and set myself free.',
@@ -41,7 +39,7 @@ var mantras = ['Breathing in, I send myself love. Breathing out, I send love to 
 
 var combinedArrays = affirmations.concat(mantras);
 
-// Let's apply an event listener to the button
+// Let's apply an event listener to the buttons
 
 receiveMessageButton.addEventListener('click', showSelfCarePhrase);
 clearButton.addEventListener('click', clearPhrase);
@@ -55,6 +53,7 @@ function getRandomIndex(array) {
 
 //Now our function to show a random affirmation or mantra when we hit the receive message button
 function showSelfCarePhrase() {
+  clearButton.classList.remove('hidden');
   bigBox.innerHTML ="";
   if(affirmationRadio.checked) {
     bigBox.innerHTML = `<p>${affirmations[getRandomIndex(affirmations)]}</p>`;
@@ -63,14 +62,12 @@ function showSelfCarePhrase() {
   };
 };
 
-//Now our function for clearing the phrase or showing an error message
+//Finally, let's clear the phrase and give an error message if there is no phrase currently present
 function clearPhrase() {
-for (i = 0; i < combinedArrays.length; i++) {
-if(bigBox.innerText === combinedArrays[i]) {
-  bigBox.innerHTML = `<img src='./assets/meditate.svg' alt = 'meditation icon'>`;
+  if(bigBox.innerHTML === `<img src="./assets/meditate.svg" alt="meditation icon">`) {
+      bigBox.innerHTML = `<p>Error: Please select Affirmation or Mantra and hit Receive Message :)</p>`
+      clearButton.classList.add('hidden');
 } else {
-  bigBox.innerText = 'Please select Affirmation or Mantra and try again :)';
-  clearButton.disable = true;
-    };
+  bigBox.innerHTML = `<img src='./assets/meditate.svg' alt='meditation icon'>`;
   };
 };

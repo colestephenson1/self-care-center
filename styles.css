@@ -8,7 +8,6 @@ black - #000000;
 */
 
 
-/* * { border: 1px solid black; } */
 
 body {
   background-image: linear-gradient(#134d71, #78a7c6, #f7e4bf);
@@ -52,18 +51,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
-/* CSS styling for ID's */
-
-/* #affirmation{
-  padding-right: 10px;
-}
-#mantra{
-  padding-left: : 10px;
-} */
-
-/* CSS styling for individual elements */
-
-button {
+.receive-button, .clear-button {
   background-color: #134d71;
   color: white;
   font-family: 'Quicksand', sans-serif;
@@ -73,6 +61,13 @@ button {
   font-size: 18px;
   margin-top: 40px;
 }
+
+.hidden{
+  display: none!important;
+}
+
+/* CSS styling for HTML element tags */
+
 img{
   height: 150px;
   width: 130px;
