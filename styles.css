@@ -51,7 +51,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.receive-button, .clear-button {
+.receive-button, .clear-button{
   background-color: #134d71;
   color: white;
   font-family: 'Quicksand', sans-serif;
@@ -71,4 +71,7 @@ body {
 img{
   height: 150px;
   width: 130px;
+}
+p{
+  font-size: 25px;
 }

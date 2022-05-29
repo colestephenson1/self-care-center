@@ -2,7 +2,7 @@
 // Now let's establish variables for querySelectors
 
 var receiveMessageButton = document.querySelector('#receiveButton');
-var clearButton = document.querySelector('.clear-button')
+var clearButton = document.querySelector('.clear-button');
 var affirmationRadio = document.querySelector('#affirmation');
 var bigBox = document.querySelector('.big-box');
 
@@ -49,25 +49,25 @@ clearButton.addEventListener('click', clearPhrase);
 //First, our function to pull a random index position from the arrays
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
-}
+};
 
 //Now our function to show a random affirmation or mantra when we hit the receive message button
 function showSelfCarePhrase() {
   clearButton.classList.remove('hidden');
   bigBox.innerHTML ="";
   if(affirmationRadio.checked) {
-    bigBox.innerHTML = `<p>${affirmations[getRandomIndex(affirmations)]}</p>`;
+    bigBox.innerHTML = `<p><em>${affirmations[getRandomIndex(affirmations)]}</em></p>`;
 } else {
-    bigBox.innerHTML = `<p>${mantras[getRandomIndex(mantras)]}</p>`;
+    bigBox.innerHTML = `<p><em>${mantras[getRandomIndex(mantras)]}</em></p>`;
   };
 };
 
 //Finally, let's clear the phrase and give an error message if there is no phrase currently present
 function clearPhrase() {
   if(bigBox.innerHTML === `<img src="./assets/meditate.svg" alt="meditation icon">`) {
-      bigBox.innerHTML = `<p>Error: Please select Affirmation or Mantra and hit Receive Message :)</p>`
-      clearButton.classList.add('hidden');
+    bigBox.innerHTML = `<p><em>Error: Please select Affirmation or Mantra and hit Receive Message :)</em></p>`
+    clearButton.classList.add('hidden');
 } else {
-  bigBox.innerHTML = `<img src='./assets/meditate.svg' alt='meditation icon'>`;
+    bigBox.innerHTML = `<img src='./assets/meditate.svg' alt='meditation icon'>`;
   };
 };
